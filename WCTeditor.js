@@ -24,8 +24,7 @@
 				spellcheckUrl: "",
 				pathToPlugin:"",
 				theme: "",
-				placeholderText: "",
-				onLoad: null
+				placeholderText: ""
 			},
 			that = $.extend(true,{},defaults,config);
 		that.textarea = this;
@@ -322,9 +321,6 @@
 			t.after($(that.templates.linkOverlay.replace('${url}', href || '')));;
 			t.siblings("div.wcte-modal").css("left",pos.left).css("top",pos.top + 20);
 		});
-		if (that.onLoad) {
-			that.onLoad(that);
-		}
 		}
 		return that;
 	}
