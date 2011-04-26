@@ -212,7 +212,7 @@
 			.delegate("a","click",function(e) {
 				e.stopPropagation();
 				var t = $(this), pos = t.position(), href = t.attr("href");
-				t.after($(templates.linkOverlay.replace('${url}', href || '')));;
+				t.after($(templates.linkOverlay.replace(/\${url}/g, href || '')));;
 				t.siblings("div.wcte-modal").css("left",pos.left).css("top",pos.top + 20);
 
 			});
